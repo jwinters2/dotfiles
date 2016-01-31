@@ -1,0 +1,60 @@
+xterm*faceName: DejaVu Sans Mono Book:antialias=true
+xterm*faceSize: 12
+
+xterm*foreground: rgb:ff/ff/ff 
+xterm*background: rgb:00/00/22
+ 
+xterm*color8: rgb:00/00/00 
+xterm*color9: rgb:ff/44/00 
+xterm*color10: rgb:00/aa/00 
+xterm*color11: rgb:aa/00/00 
+xterm*color12: rgb:00/aa/aa 
+xterm*color13: rgb:aa/00/aa 
+xterm*color14: rgb:aa/aa/00 
+xterm*color15: rgb:aa/aa/aa 
+
+xterm*color0: rgb:ff/00/00
+xterm*color1: rgb:ff/55/55
+xterm*color2: rgb:88/88/ff 
+xterm*color3: rgb:ff/ff/55 
+xterm*color4: rgb:55/ff/55
+xterm*color5: rgb:ff/55/ff 
+xterm*color6: rgb:55/ff/ff 
+xterm*color7: rgb:bb/bb/ff
+
+URxvt*transparent: true
+URxvt*shading: 40
+URxvt*depth: 32
+URxvt*background: rgba:0000/0000/0000/7777
+URxvt*foreground: rgb:ff/ff/ff
+URxvt*scrollBar: off
+
+URxvt*font: xft:DejaVu Sans Mono:size=12
+URxvt*letterSpace: 0
+
+!	0	8	 black
+! 1 9  red
+! 2 10 green
+! 3 11 yellow
+! 4 12 blue
+! 5 13 purple
+! 6 14 orange
+! 7 15 white
+
+URxvt.color0: #555753
+URxvt.color1: #ef2929
+URxvt.color2: #8ae234
+URxvt.color3: #fce94f
+URxvt.color4: #76aeeb
+URxvt.color5: #de5dcf
+URxvt.color6: #2ef3f3
+URxvt.color7: #444444
+
+URxvt.color8: #999999
+URxvt.color9: #cc0000
+URxvt.color10: #4e9a06
+URxvt.color11: #c4a000
+URxvt.color12: #4788db
+URxvt.color13: #ac53bb
+URxvt.color14: #17b8ba
+URxvt.color15: #d3d7cf
