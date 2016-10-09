@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# 1 = hindi numerals
+# 2 = roman numerals
+style=2
+
+blank=$(echo -e "\xE2\x97\x87")
+full=$(echo -e "\xE2\x97\x88")
+current=$(echo -e "\xE2\x97\x86")
+
+circles=("." "." "." "." "." "." "." "." "." "." ".") 
+for i in $(seq 1 10); do
+  circles[$i]=$blank
+done
+
+echo -n "\${font Ubuntu Mono Regular}"
+while read -r ws; do
+  read -r active
+  if [ "$active" = true ]; then
+    #echo -n " \${font Unifont:bold:size=12}\${color "#ffffff"}$(echo $ws | cut -d: -f $style)"
+    circles[$(echo $ws | cut -d: -f 1)]="\${font Ubuntu Mono Regular:bold:size=12}\${color "#ffffff"}$current\${color "#999999"}\${font Ubuntu Mono Regular}"
+  else
+    #echo -n " \${font}\${color "#999999"}$(echo $ws | cut -d: -f $style)"
+    circles[$(echo $ws | cut -d: -f 1)]="\${font Ubuntu Mono Regular}\${color "#999999"}$full\${color "#999999"}\${font Ubuntu Mono Regular}"
+  fi
+  #echo -n "\${font Ubuntu Mono Regular}"
+done< <(i3-msg -t get_workspaces | jshon -a -e name -u -p -e focused -u)
+
+for i in $(seq 1 10); do
+  echo -n " ${circles[$i]}"
+done
+

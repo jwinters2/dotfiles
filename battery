@@ -1,0 +1,42 @@
+#!/bin/bash
+
+e=$(echo -e "\xE2\x97\x87")
+f=$(echo -e "\xE2\x97\x88")
+
+value=$(acpi | cut -d' ' -f 4 | cut -d'%' -f 1)
+charge=$(acpi -a | cut -d' ' -f 3)
+
+echo -n "\${font Ubuntu Mono Regular}"
+
+if [ $charge = "on-line" ]; then
+  echo -n "\${color "#aaccff"}"
+elif [ $value -ge "50" ]; then
+  echo -n "\${color "#aaddaa"}"
+elif [ $value -ge "10" ]; then
+  echo -n "\${color "#ffff88"}"
+else
+  echo -n "\${color "#ff0000"}"
+fi
+
+if [ $value -ge "90" ]; then
+  echo -n "$f $f $f $f $f $f $f $f $f $f"
+elif [ $value -ge "80" ]; then
+  echo -n "$e $f $f $f $f $f $f $f $f $f"
+elif [ $value -ge "70" ]; then
+  echo -n "$e $e $f $f $f $f $f $f $f $f"
+elif [ $value -ge "60" ]; then
+  echo -n "$e $e $e $f $f $f $f $f $f $f"
+elif [ $value -ge "50" ]; then
+  echo -n "$e $e $e $e $f $f $f $f $f $f"
+elif [ $value -ge "40" ]; then
+  echo -n "$e $e $e $e $e $f $f $f $f $f"
+elif [ $value -ge "30" ]; then
+  echo -n "$e $e $e $e $e $e $f $f $f $f"
+elif [ $value -ge "20" ]; then
+  echo -n "$e $e $e $e $e $e $e $f $f $f"
+elif [ $value -ge "10" ]; then
+  echo -n "$e $e $e $e $e $e $e $e $f $f"
+else
+  echo -n "$e $e $e $e $e $e $e $e $e $f"
+fi
+echo -n "\${font}"
